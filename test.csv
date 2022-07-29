@@ -1,0 +1,31 @@
+## 私有部署架构
+# label: %role%<br><i style="color:gray;">%nodes%</i>
+# style: shape=rectangle;fillColor=#dae8fc;strokeColor=#6c8ebf;html=1;
+# parentstyle: dashed=1;shape=rect;heightdashed=1;enter;verticalAlign=top;whiteSpace=wrap;html=1;horizontal=1;horizontalStack=0;resizeParent=0;fillColor=#F0F8FF;strokeColor=#666666;perimeter=rectanglePerimeter;container=1;recursiveResize=1;collapsible=0;
+# namespace: csvimport-
+# connect: {"from":"refs", "to":"id", "invert":false, "style":"curved=0;endArrow=blockThin;endFill=1;"}
+# left: left
+# top: top
+# width: @width
+# height: @height
+# padding: 15
+# identity: id
+# ignore: id
+# nodespacing: 40
+# levelspacing: 100
+# edgespacing: 40
+# layout: virtical
+# parent: rparent
+## CSV starts under this line
+id,role,left,top,width,height,nodes,refs,rparent
+0,生产环境,20,20,440,620,,,
+1,web,24,10,350,70,192.168.1.100<br>192.168.1.200,2,0
+2,缓存层,0,100,400,180,,6,0
+3,memcached,10,20,105,90,192.168.1.100<br>192.168.1.200,,2
+4,Redis,130,20,105,90,192.168.1.100<br>192.168.1.200,,2
+5,ES,250,20,105,90,192.168.1.100<br>192.168.1.200,,2
+6,数据库及存储,0,305,400,180,,10,0
+7,MySQL,10,20,105,90,192.168.1.100<br>192.168.1.200,,6
+8,MongoDB,130,20,105,90,192.168.1.100<br>192.168.1.200,,6
+9,Minio,250,20,105,90,192.168.1.100<br>192.168.1.200,,6
+10,K8S,24,510,350,70,192.168.1.100<br>192.168.1.200,,0
